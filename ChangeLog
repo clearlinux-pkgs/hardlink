@@ -1,0 +1,78 @@
+hardlink (0.3.0) unstable; urgency=low
+
+  [ Julian Andres Klode ]
+  * New release, upload to unstable. Thanks to Tom Keel from Intel for the
+    xattr patches.
+  * Do not install a handler for SIGTERM
+  * Do not install a handler for SIGUSR2
+  * README: hardlink is no longer written in Python
+  * Support --minimum-size,-s option (Closes: #754187)
+  * debian/control: Build-Depend on libattr1-dev
+  * debian: Switch to 3.0 (native)
+
+  [ Tom Keel ]
+  * hardlink: Handle extended attributes.
+  * hardlink: Add --keep-oldest option.
+
+ -- Julian Andres Klode <jak@debian.org>  Thu, 25 Sep 2014 14:26:22 +0200
+
+hardlink (0.3.0~rc2) experimental; urgency=high
+
+  * Correctly handle SIGINT and SIGTERM during file comparisons. This fixes
+    a potential loss of one file in such situations.
+  * hardlink.c: Update copyright statement
+  * debian/control: Update Standards-Version, Vcs-Git, and Vcs-Browser
+
+ -- Julian Andres Klode <jak@debian.org>  Sun, 05 Jan 2014 16:13:39 +0100
+
+hardlink (0.3.0~rc1) experimental; urgency=low
+
+  * Group files by ino. This saves resources, avoids useless comparisons,
+    and fixes the counting of freed space, except for --respect-name
+    where it remains broken.
+
+ -- Julian Andres Klode <jak@debian.org>  Mon, 17 Sep 2012 16:47:46 +0200
+
+hardlink (0.2.0) unstable; urgency=low
+
+  [ Diego Elio Pettenò ]
+  * Fix positioning of LDLIBS flags, order is important.
+
+  [ Julian Andres Klode ]
+  * Final release of 0.2.0; upload to unstable
+
+ -- Julian Andres Klode <jak@debian.org>  Sat, 12 May 2012 12:57:02 +0200
+
+hardlink (0.2.0~rc1) experimental; urgency=low
+
+  * Rewrite hardlink in C, improves memory usage
+    - Use PCRE for regular expressions (can build with POSIX ones as well)
+  * Handle several signals (SIGINT, SIGTERM, SIGUSR1, SIGUSR2)
+  * Do not create backups. Instead, link to temporary and then rename to target.
+  * Add a "-c" compatibility option for Fedora people and their friends
+
+ -- Julian Andres Klode <jak@debian.org>  Sat, 03 Mar 2012 18:11:05 +0100
+
+hardlink (0.1.2) unstable; urgency=low
+
+  * Support files on the command line (Closes: #608864)
+  * Mention duplicate and identical in the description (Closes: #619851)
+  * Document security issues (Closes: #645516, like CVE-2011-3632)
+  * When both exclude and include are specified, behave as the manpage says
+  * Upgrade to debhelper 9
+  * Upgrade to Policy 3.9.3 and copyright-format 1.0
+
+ -- Julian Andres Klode <jak@debian.org>  Tue, 28 Feb 2012 17:57:27 +0100
+
+hardlink (0.1.1) unstable; urgency=low
+
+  * Prevent overwriting already existing backup files (Closes: #514772)
+  * debian/control: Add ${misc:Depends} to dependencies
+
+ -- Julian Andres Klode <jak@debian.org>  Wed, 11 Feb 2009 14:02:15 +0100
+
+hardlink (0.1) unstable; urgency=low
+
+  * Initial upload to Debian (Closes: #509685)
+
+ -- Julian Andres Klode <jak@debian.org>  Fri, 26 Dec 2008 14:33:48 +0100
