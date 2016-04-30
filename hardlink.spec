@@ -4,7 +4,7 @@
 #
 Name     : hardlink
 Version  : 0.3.0
-Release  : 3
+Release  : 4
 URL      : http://jak-linux.org/projects/hardlink/hardlink_0.3.0.tar.xz
 Source0  : http://jak-linux.org/projects/hardlink/hardlink_0.3.0.tar.xz
 Summary  : No detailed summary available
